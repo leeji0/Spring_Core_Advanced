@@ -12,7 +12,7 @@ public class FieldServiceTest {
     @Test
     void field() {
         log.info("main start");
-        Runnable userA = () -> {
+        Runnable userA = () -> { //lambda
             fieldService.logic("userA");
         };
         Runnable userB = () -> {
