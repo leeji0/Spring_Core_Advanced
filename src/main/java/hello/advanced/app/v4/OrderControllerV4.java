@@ -18,7 +18,7 @@ public class OrderControllerV4 {
     public String request(String itemId) {
         AbstractTemplate<String> template = new AbstractTemplate<>(trace) {
             @Override
-            protected String call() {
+            protected String call() { // 익명 내부 클래스 사용
                 orderService.orderItem(itemId);
                 return "ok";
             }

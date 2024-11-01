@@ -7,6 +7,7 @@ import hello.advanced.trace.strategy.code.strategy.StrategyLogic2;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
+
 @Slf4j
 public class ContextV1Test {
 
