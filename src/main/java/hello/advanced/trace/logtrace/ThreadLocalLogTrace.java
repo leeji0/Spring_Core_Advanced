@@ -54,10 +54,13 @@ public class ThreadLocalLogTrace implements LogTrace {
         releaseTraceId();
     }
 
+    /**
+     * 주의 !! http 요청 처리가 끝나면 was에서 나갈 때 필터나 인터셉터에서 스레드 로컬 값을 제거해줘야한다.
+     */
     private void releaseTraceId() {
         TraceId traceId = traceIdHolder.get();
         if (traceId.isFirstLevel()) {
-            traceIdHolder.remove(); //destroy
+            traceIdHolder.remove(); //destroy (해당 스레드가 보관한 데이터만 제거됨)
         } else {
             traceIdHolder.set(traceId.createPreviousId());
         }
