@@ -15,5 +15,8 @@ public abstract class AbstractTemplate {
         log.info("resultTime={}", resultTime);
     }
 
+    /**
+     * 상속으로 해결
+     */
     protected abstract void call();
 }
